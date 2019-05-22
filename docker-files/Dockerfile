@@ -18,7 +18,7 @@
 # not exist yet ;)
 # ------------------------------------------------------------------------------
 #
-FROM alpine:3.8 as build
+FROM alpine:3.7 as build
 
 RUN mkdir -p /build/seccubus/docker-files
 COPY bin /build/seccubus/bin
@@ -33,7 +33,7 @@ COPY docker-files/build-seccubus.sh /build/seccubus/docker-files
 RUN cd /build/seccubus;./docker-files/build-seccubus.sh
 COPY docker-files/install-seccubus.sh  /build/seccubus/build/docker-files/
 
-FROM alpine:3.8
+FROM alpine:3.7
 
 MAINTAINER fbreedijk@schubergphilis.com
 
